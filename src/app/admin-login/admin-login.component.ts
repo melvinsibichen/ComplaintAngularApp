@@ -12,9 +12,11 @@ export class AdminLoginComponent {
   
   readValues = ()=>{
     if(this.username=="admin"&&this.password=="12345"){
-      
-    }else{
-      
+      this.route.navigate(["/dashboard"])      
+    }
+    else
+    {
+      alert("Invalid username or password");
     }
 
   }
