@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { UserRegComponent } from './user-reg/user-reg.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
 
 const myRoutes:Routes = [
   {
@@ -17,6 +20,14 @@ const myRoutes:Routes = [
   {
     path:"userlogin",
     component:UserLoginComponent
+  },
+  {
+    path:"userReg",
+    component:UserRegComponent
+  },
+  {
+    path:"dashboard",
+    component:DashboardComponent
   }
 ]
 
@@ -24,7 +35,10 @@ const myRoutes:Routes = [
   declarations: [
     AppComponent,
     AdminLoginComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserRegComponent,
+    DashboardComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
