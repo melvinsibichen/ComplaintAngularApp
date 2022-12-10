@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -7,8 +8,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService,private route:Router){}
   username=""
   password=""
   
@@ -21,8 +21,9 @@ export class UserLoginComponent {
       (response:any) =>{
         if(response.status == "success"){
           localStorage.setItem("userInfo",response.userId)
+          this.route.navigate(["/userProfile"])
         }else{
-          alert("login failed")
+          alert("Invalid Credentials")
         }
       }
     )

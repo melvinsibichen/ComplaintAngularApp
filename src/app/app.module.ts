@@ -30,6 +30,10 @@ const myRoutes:Routes = [
   {
     path:"dashboard",
     component:DashboardComponent
+  },
+  {
+    path:"userProfile",
+    component:UserProfileComponent
   }
 ]
 
