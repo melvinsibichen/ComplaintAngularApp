@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -6,17 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent {
-
+  constructor(private route:Router){
+    localStorage.removeItem("userInfo");
+  }
   username = ""
   password = ""
   
   readValues = ()=>{
     if(this.username=="admin"&&this.password=="12345"){
-      this.route.navigate(["/dashboard"])      
-    }
-    else
-    {
-      alert("Invalid username or password");
+      this.route.navigate(["/dashboard"])
+    }else{
+      alert("Invalid Credentials");
     }
 
   }
