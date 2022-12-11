@@ -21,11 +21,12 @@ export class UserLoginComponent {
       (response:any) =>{
         if(response.status == "success"){
           localStorage.setItem("userInfo",response.userId)
-          this.route.navigate(["/userProfile"])
+          this.route.navigate(["/viewUserComplaint"])
         }else{
           alert("Invalid Credentials")
         }
       }
     )
   }
+
 }
